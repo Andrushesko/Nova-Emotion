@@ -43,56 +43,6 @@
       </p>
     </div>
 
-    <!-- КАРТОЧКИ УСЛУГ -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-      
-      <!-- Карточка 1: Видеомонтаж -->
-      <div class="relative overflow-hidden p-6 rounded-3xl bg-neutral-900/40 border border-neutral-800/80 hover:border-indigo-500/50 hover:bg-neutral-900/80 transition-all duration-300 flex flex-col justify-between group">
-        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div>
-          <div class="text-indigo-400 mb-4">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-          </div>
-          <h2 class="font-heading text-xl font-bold text-white mb-2">Видеомонтаж</h2>
-          <p class="text-sm text-neutral-400 leading-relaxed mb-6">
-            Работа с исходниками любого качества. Динамичная склейка, цветокоррекция, звук и графика для Reels и роликов.
-          </p>
-        </div>
-        <span class="text-xs text-indigo-400 font-semibold tracking-wider uppercase">Постпродакшн &rarr;</span>
-      </div>
-
-      <!-- Карточка 2: Создание сайтов -->
-      <div class="relative overflow-hidden p-6 rounded-3xl bg-neutral-900/40 border border-neutral-800/80 hover:border-emerald-500/50 hover:bg-neutral-900/80 transition-all duration-300 flex flex-col justify-between group">
-        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div>
-          <div class="text-emerald-400 mb-4">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          </div>
-          <h2 class="font-heading text-xl font-bold text-white mb-2">Веб-разработка</h2>
-          <p class="text-sm text-neutral-400 leading-relaxed mb-6">
-            Создание лендингов, сайтов-визиток и портфолио под ключ. Быстрый запуск, современный дизайн и адаптивность под любые устройства.
-          </p>
-        </div>
-        <span class="text-xs text-emerald-400 font-semibold tracking-wider uppercase">Сайты под ключ &rarr;</span>
-      </div>
-
-      <!-- Карточка 3: IT -->
-      <div class="relative overflow-hidden p-6 rounded-3xl bg-neutral-900/40 border border-neutral-800/80 hover:border-cyan-500/50 hover:bg-neutral-900/80 transition-all duration-300 flex flex-col justify-between group">
-        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div>
-          <div class="text-cyan-400 mb-4">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          </div>
-          <h2 class="font-heading text-xl font-bold text-white mb-2">IT & Поддержка</h2>
-          <p class="text-sm text-neutral-400 leading-relaxed mb-6">
-            Настройка оборудования, администрирование, системная интеграция и сетевые решения для вашего офиса.
-          </p>
-        </div>
-        <span class="text-xs text-cyan-400 font-semibold tracking-wider uppercase">Технологии &rarr;</span>
-      </div>
-
-    </div>
-
     <!-- БЛОК НАШИ КОМПЕТЕНЦИИ -->
     <div class="mb-20">
       <div class="flex items-center justify-between mb-8">
@@ -104,17 +54,18 @@
         <!-- 1. Компетенция: Видео -->
         <div class="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-indigo-500/50 transition-all duration-300 flex flex-col">
           <div class="aspect-video bg-neutral-800 flex items-center justify-center relative overflow-hidden">
-            <!-- СЮДА МОЖНО ВСТАВИТЬ ФОТО: <img src="video-bg.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"> -->
-            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent z-10"></div>
-            <div class="z-20 w-16 h-16 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+            <!-- КАРТИНКА ДЛЯ ВИДЕО (не забудьте закинуть video.jpg в репозиторий) -->
+            <img src="video.jpg" alt="Видеомонтаж" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300 z-0">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/50 to-transparent z-10"></div>
+            <div class="z-20 w-16 h-16 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 backdrop-blur-sm">
                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
             </div>
-            <span class="absolute text-neutral-500 font-heading tracking-widest uppercase opacity-30 select-none text-xl z-10">Video</span>
           </div>
           <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900">
             <div>
               <h3 class="font-heading text-lg font-bold text-white mb-2">Видеомонтаж и трейлеры</h3>
-              <p class="text-sm text-neutral-400 mb-4">Демонстрация работы с ритмом и смыслами. Концепт-трейлер к фильму и динамичный шоурил.</p>
+              <p class="text-sm text-neutral-400 mb-4">Работа с исходниками любого качества. Динамичная склейка, цветокоррекция, звук и графика для Reels и роликов.</p>
             </div>
             <span class="text-xs text-indigo-400 font-semibold uppercase tracking-wider">Видео по запросу &rarr;</span>
           </div>
@@ -123,17 +74,18 @@
         <!-- 2. Компетенция: Сайты -->
         <div class="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-emerald-500/50 transition-all duration-300 flex flex-col">
           <div class="aspect-video bg-neutral-800 flex items-center justify-center relative overflow-hidden">
-             <!-- СЮДА МОЖНО ВСТАВИТЬ СКРИНШОТ САЙТА: <img src="web-preview.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"> -->
-             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent z-10"></div>
-             <div class="z-20 w-16 h-16 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+             <!-- КАРТИНКА ДЛЯ САЙТОВ (не забудьте закинуть web.jpg в репозиторий) -->
+             <img src="web.jpg" alt="Веб-разработка" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300 z-0">
+             
+             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/50 to-transparent z-10"></div>
+             <div class="z-20 w-16 h-16 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 backdrop-blur-sm">
                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
              </div>
-             <span class="absolute text-neutral-500 font-heading tracking-widest uppercase opacity-30 select-none text-xl z-10">Web</span>
           </div>
           <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900">
             <div>
               <h3 class="font-heading text-lg font-bold text-white mb-2">Веб-разработка</h3>
-              <p class="text-sm text-neutral-400 mb-4">Создание сайтов-визиток и лендингов. Этот сайт — пример работы по разработке интерфейсов.</p>
+              <p class="text-sm text-neutral-400 mb-4">Создание лендингов, сайтов-визиток и портфолио под ключ. Быстрый запуск, современный дизайн и адаптивность под любые устройства.</p>
             </div>
             <a href="#contact" class="text-xs text-emerald-400 font-semibold uppercase tracking-wider hover:text-emerald-300 transition-colors">Заказать сайт &rarr;</a>
           </div>
@@ -142,16 +94,17 @@
         <!-- 3. Компетенция: IT -->
         <div class="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 flex flex-col">
           <div class="aspect-video bg-neutral-800 flex items-center justify-center relative overflow-hidden">
-             <!-- СЮДА МОЖНО ВСТАВИТЬ КАРТИНКУ СЕРВЕРОВ: <img src="it-bg.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"> -->
-             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent z-10"></div>
-             <div class="z-20 w-16 h-16 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+             <!-- КАРТИНКА ДЛЯ IT (не забудьте закинуть it.jpg в репозиторий) -->
+             <img src="it.jpg" alt="IT и инфраструктура" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300 z-0">
+             
+             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/50 to-transparent z-10"></div>
+             <div class="z-20 w-16 h-16 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 backdrop-blur-sm">
                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
              </div>
-             <span class="absolute text-neutral-500 font-heading tracking-widest uppercase opacity-30 select-none text-xl z-10">IT</span>
           </div>
           <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900">
             <div>
-              <h3 class="font-heading text-lg font-bold text-white mb-2">IT & Инфраструктура</h3>
+              <h3 class="font-heading text-lg font-bold text-white mb-2">IT и Инфраструктура</h3>
               <p class="text-sm text-neutral-400 mb-4">Настройка рабочих мест, серверов и сетей. Берем на себя техническую поддержку.</p>
             </div>
             <a href="#contact" class="text-xs text-cyan-400 font-semibold uppercase tracking-wider hover:text-cyan-300 transition-colors">Обсудить задачу &rarr;</a>
