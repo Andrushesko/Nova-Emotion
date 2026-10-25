@@ -230,9 +230,10 @@
       .then(async (response) => {
           let json = await response.json();
           if (response.status == 200) {
-              form.reset();
+              // ВМЕСТО ОЧИСТКИ ФОРМЫ МЫ ЕЕ ПРЯЧЕМ
+              form.style.display = 'none'; 
               successMsg.classList.remove('hidden');
-              successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              successMsg.classList.add('block', 'text-center', 'py-8'); // Делаем плашку большой
           } else {
               alert(json.message);
           }
