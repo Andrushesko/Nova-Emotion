@@ -3,133 +3,302 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova E-Motion — Проекты и Услуги</title>
-  <!-- Подключение шрифта и Tailwind CSS через CDN (ничего устанавливать не нужно) -->
+  <title>Nova E-Motion — Креативные решения, медиа и технологии</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .neon-glow {
-      box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
-    }
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    .font-heading { font-family: 'Space Grotesk', sans-serif; }
   </style>
 </head>
 <body class="bg-neutral-950 text-neutral-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
 
-  <!-- ================================================= -->
-  <!-- ШАПКА / HEADER -->
-  <!-- ================================================= -->
+  <!-- ШАПКА -->
   <header class="w-full border-b border-neutral-800/80 bg-neutral-900/40 backdrop-blur-md sticky top-0 z-50">
-    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <img src="logo.png" alt="Nova E-Motion" class="h-9 w-auto object-contain">
-        <span class="font-bold tracking-tight text-lg text-white">NOVA <span class="text-indigo-400">E-MOTION</span></span>
-      </div>
-      
-      <!-- БЫСТРАЯ КНОПКА СВЯЗИ В ШАПКЕ -->
-      <a href="mailto:info@novaemotion.ru" class="text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full border border-neutral-700 hover:border-indigo-500 hover:text-indigo-400 transition">
-        Написать
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Логотип ограничен по высоте, чтобы не раздувать шапку -->
+      <a href="/" class="flex items-center">
+        <img src="logo.png" alt="Nova E-Motion" class="h-12 w-auto object-contain">
       </a>
     </div>
   </header>
 
-  <!-- ================================================= -->
-  <!-- ГЛАВНЫЙ БЛОК (HERO) -->
-  <!-- ================================================= -->
-  <main class="max-w-4xl mx-auto px-6 py-12 flex-grow w-full">
+  <!-- ГЛАВНЫЙ БЛОК -->
+  <main class="max-w-5xl mx-auto px-6 py-12 flex-grow w-full relative">
     
-    <div class="text-center md:text-left mb-14">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-medium mb-4">
+    <!-- Свечение на фоне -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+    <!-- HERO -->
+    <div class="text-center md:text-left mb-16 pt-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-medium mb-6">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Открыт к проектам и сотрудничеству
       </div>
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-        Креативные решения, медиа & технологии
+      <h1 class="font-heading text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+        Креативные решения,<br>медиа & <span class="text-indigo-400">технологии</span>
       </h1>
       <p class="text-neutral-400 text-base md:text-lg max-w-2xl leading-relaxed">
-        Производство видеоконтента, технические решения и запуск спецпроектов. Реализуем задачи от идеи до готового результата.
+        Комплексные решения для вашего бизнеса: от профессионального видеомонтажа до создания сайтов и IT-поддержки. Реализуем задачи от идеи до готового результата.
       </p>
+    </div>
+
+    <!-- КАРТОЧКИ УСЛУГ -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
       
-      <!-- КНОПКИ ДЕЙСТВИЯ -->
-      <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-        <!-- КНОПКА TELEGRAM (замени логин на свой) -->
-        <a href="https://t.me/Nova_Emotion" target="_blank" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition shadow-lg shadow-indigo-600/20 flex items-center gap-2">
-          <span>Написать в Telegram</span>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-        </a>
-        <!-- КНОПКА ПОЧТЫ (замени на свой адрес) -->
-        <a href="mailto:info@novaemotion.ru" class="px-6 py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 font-medium text-sm transition flex items-center gap-2">
-          <span>Отправить Email</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        </a>
+      <!-- Карточка 1: Видеомонтаж -->
+      <div class="relative overflow-hidden p-6 rounded-3xl bg-neutral-900/40 border border-neutral-800/80 hover:border-indigo-500/50 hover:bg-neutral-900/80 transition-all duration-300 flex flex-col justify-between group">
+        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div>
+          <div class="text-indigo-400 mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <h2 class="font-heading text-xl font-bold text-white mb-2">Видеомонтаж</h2>
+          <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+            Работа с исходниками любого качества. Динамичная склейка, цветокоррекция, звук и графика для Reels и роликов.
+          </p>
+        </div>
+        <span class="text-xs text-indigo-400 font-semibold tracking-wider uppercase">Постпродакшн &rarr;</span>
+      </div>
+
+      <!-- Карточка 2: Создание сайтов -->
+      <div class="relative overflow-hidden p-6 rounded-3xl bg-neutral-900/40 border border-neutral-800/80 hover:border-emerald-500/50 hover:bg-neutral-900/80 transition-all duration-300 flex flex-col justify-between group">
+        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div>
+          <div class="text-emerald-400 mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h2 class="font-heading text-xl font-bold text-white mb-2">Веб-разработка</h2>
+          <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+            Создание лендингов, сайтов-визиток и портфолио под ключ. Быстрый запуск, современный дизайн и адаптивность под любые устройства.
+          </p>
+        </div>
+        <span class="text-xs text-emerald-400 font-semibold tracking-wider uppercase">Сайты под ключ &rarr;</span>
+      </div>
+
+      <!-- Карточка 3: IT -->
+      <div class="relative overflow-hidden p-6 rounded-3xl bg-neutral-900/40 border border-neutral-800/80 hover:border-cyan-500/50 hover:bg-neutral-900/80 transition-all duration-300 flex flex-col justify-between group">
+        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div>
+          <div class="text-cyan-400 mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h2 class="font-heading text-xl font-bold text-white mb-2">IT & Поддержка</h2>
+          <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+            Настройка оборудования, администрирование, системная интеграция и сетевые решения для вашего офиса.
+          </p>
+        </div>
+        <span class="text-xs text-cyan-400 font-semibold tracking-wider uppercase">Технологии &rarr;</span>
+      </div>
+
+    </div>
+
+    <!-- БЛОК НАШИ КОМПЕТЕНЦИИ -->
+    <div class="mb-20">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="font-heading text-3xl font-bold text-white">Наши компетенции</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- 1. Компетенция: Видео -->
+        <div class="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-indigo-500/50 transition-all duration-300 flex flex-col">
+          <div class="aspect-video bg-neutral-800 flex items-center justify-center relative overflow-hidden">
+            <!-- СЮДА МОЖНО ВСТАВИТЬ ФОТО: <img src="video-bg.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"> -->
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent z-10"></div>
+            <div class="z-20 w-16 h-16 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+               <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </div>
+            <span class="absolute text-neutral-500 font-heading tracking-widest uppercase opacity-30 select-none text-xl z-10">Video</span>
+          </div>
+          <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900">
+            <div>
+              <h3 class="font-heading text-lg font-bold text-white mb-2">Видеомонтаж и трейлеры</h3>
+              <p class="text-sm text-neutral-400 mb-4">Демонстрация работы с ритмом и смыслами. Концепт-трейлер к фильму и динамичный шоурил.</p>
+            </div>
+            <span class="text-xs text-indigo-400 font-semibold uppercase tracking-wider">Видео по запросу &rarr;</span>
+          </div>
+        </div>
+
+        <!-- 2. Компетенция: Сайты -->
+        <div class="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-emerald-500/50 transition-all duration-300 flex flex-col">
+          <div class="aspect-video bg-neutral-800 flex items-center justify-center relative overflow-hidden">
+             <!-- СЮДА МОЖНО ВСТАВИТЬ СКРИНШОТ САЙТА: <img src="web-preview.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"> -->
+             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent z-10"></div>
+             <div class="z-20 w-16 h-16 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+               <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+             </div>
+             <span class="absolute text-neutral-500 font-heading tracking-widest uppercase opacity-30 select-none text-xl z-10">Web</span>
+          </div>
+          <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900">
+            <div>
+              <h3 class="font-heading text-lg font-bold text-white mb-2">Веб-разработка</h3>
+              <p class="text-sm text-neutral-400 mb-4">Создание сайтов-визиток и лендингов. Этот сайт — пример работы по разработке интерфейсов.</p>
+            </div>
+            <a href="#contact" class="text-xs text-emerald-400 font-semibold uppercase tracking-wider hover:text-emerald-300 transition-colors">Заказать сайт &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 3. Компетенция: IT -->
+        <div class="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 flex flex-col">
+          <div class="aspect-video bg-neutral-800 flex items-center justify-center relative overflow-hidden">
+             <!-- СЮДА МОЖНО ВСТАВИТЬ КАРТИНКУ СЕРВЕРОВ: <img src="it-bg.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"> -->
+             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent z-10"></div>
+             <div class="z-20 w-16 h-16 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+               <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+             </div>
+             <span class="absolute text-neutral-500 font-heading tracking-widest uppercase opacity-30 select-none text-xl z-10">IT</span>
+          </div>
+          <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900">
+            <div>
+              <h3 class="font-heading text-lg font-bold text-white mb-2">IT & Инфраструктура</h3>
+              <p class="text-sm text-neutral-400 mb-4">Настройка рабочих мест, серверов и сетей. Берем на себя техническую поддержку.</p>
+            </div>
+            <a href="#contact" class="text-xs text-cyan-400 font-semibold uppercase tracking-wider hover:text-cyan-300 transition-colors">Обсудить задачу &rarr;</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- ================================================= -->
-    <!-- СЕТКА НАПРАВЛЕНИЙ / КАРТОЧЕК -->
-    <!-- Чтобы добавить новое направление, просто скопируй один <div> карточки -->
-    <!-- ================================================= -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      
-      <!-- КАРТОЧКА 1: Видеомонтаж -->
-      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-indigo-500/50 transition flex flex-col justify-between neon-glow">
-        <div>
-          <div class="text-indigo-400 mb-3">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+    <!-- БЛОК СВЯЗИ -->
+    <div id="contact" class="border-t border-neutral-800/80 pt-12 pb-6 scroll-mt-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        
+        <!-- ЛЕВАЯ КОЛОНКА -->
+        <div class="flex flex-col justify-between h-full">
+          
+          <div>
+            <h2 class="font-heading text-3xl font-bold text-white mb-4">Обсудить задачу</h2>
+            <p class="text-neutral-400 mb-8 leading-relaxed">
+              Нужно смонтировать видео, сделать сайт или настроить IT-инфраструктуру? Оставьте заявку, и мы предметно обсудим ваш проект.
+            </p>
           </div>
-          <h2 class="text-lg font-bold text-white mb-2">Видеопроизводство</h2>
-          <p class="text-sm text-neutral-400 leading-relaxed mb-4">
-            Профессиональный монтаж, цветокоррекция, динамика и оформление роликов для бизнеса и соцсетей.
-          </p>
-        </div>
-        <span class="text-xs text-indigo-400 font-semibold tracking-wider uppercase">В работе &rarr;</span>
-      </div>
+          
+          <div class="flex flex-col gap-4">
+            
+            <!-- 1. Почта -->
+            <a href="mailto:info@novaemotion.ru" class="flex items-center gap-4 p-4 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-indigo-500/50 hover:bg-neutral-800/80 transition-all duration-200 group w-full">
+              <div class="p-2.5 rounded-xl bg-neutral-800 text-indigo-400 group-hover:bg-indigo-500/20 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <p class="text-base font-bold text-white group-hover:text-indigo-300 transition-colors">Почта</p>
+                <p class="text-sm text-neutral-500">info@novaemotion.ru</p>
+              </div>
+            </a>
 
-      <!-- КАРТОЧКА 2: Технические решения / IT -->
-      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-indigo-500/50 transition flex flex-col justify-between">
-        <div>
-          <div class="text-cyan-400 mb-3">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <!-- 2. Telegram -->
+            <a href="https://t.me/nova_emotion" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-sky-500/50 hover:bg-neutral-800/80 transition-all duration-200 group w-full">
+              <div class="p-2.5 rounded-xl bg-neutral-800 text-sky-400 group-hover:bg-sky-500/20 transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              </div>
+              <div>
+                <p class="text-base font-bold text-white group-hover:text-sky-300 transition-colors">Telegram</p>
+                <p class="text-sm text-neutral-500">@nova_emotion</p>
+              </div>
+            </a>
+
+            <!-- 3. WhatsApp -->
+            <a href="https://wa.me/nova_emotion" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500/50 hover:bg-neutral-800/80 transition-all duration-200 group w-full">
+              <div class="p-2.5 rounded-xl bg-neutral-800 text-emerald-400 group-hover:bg-emerald-500/20 transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <p class="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">WhatsApp</p>
+                <p class="text-sm text-neutral-500">@nova_emotion</p>
+              </div>
+            </a>
           </div>
-          <h2 class="text-lg font-bold text-white mb-2">IT & Техподдержка</h2>
-          <p class="text-sm text-neutral-400 leading-relaxed mb-4">
-            Настройка оборудования, администрирование, системная интеграция и сетевые решения.
-          </p>
-        </div>
-        <span class="text-xs text-neutral-500 font-semibold tracking-wider uppercase">Доступно &rarr;</span>
-      </div>
 
-      <!-- КАРТОЧКА 3: Товары / Проекты -->
-      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-indigo-500/50 transition flex flex-col justify-between">
-        <div>
-          <div class="text-emerald-400 mb-3">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        </div>
+
+        <!-- ПРАВАЯ КОЛОНКА: Форма -->
+        <div class="bg-neutral-900 border border-neutral-800 p-6 md:p-8 rounded-2xl flex flex-col justify-center relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+          
+          <div id="form-success" class="hidden bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 p-4 rounded-xl mb-6 text-sm">
+            Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.
           </div>
-          <h2 class="text-lg font-bold text-white mb-2">Товары & Маркет</h2>
-          <p class="text-sm text-neutral-400 leading-relaxed mb-4">
-            Актуальные предложения, техника, аксессуары и партнерские проекты под заказ.
-          </p>
-        </div>
-        <span class="text-xs text-neutral-500 font-semibold tracking-wider uppercase">Витрина &rarr;</span>
-      </div>
 
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- ВСТАВЬТЕ ВАШ КЛЮЧ ОТ WEB3FORMS -->
+            <input type="hidden" name="access_key" value="ВАШ_КЛЮЧ_СЮДА">
+            
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-neutral-400 mb-2">Как к вам обращаться?</label>
+              <input type="text" name="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
+            </div>
+            
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-neutral-400 mb-2">Ваш Email или телефон</label>
+              <input type="text" name="contact" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-neutral-400 mb-2">Опишите задачу (ссылки на исходники, примеры сайтов)</label>
+              <textarea name="message" required rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors resize-none" placeholder="Кратко о том, что нужно сделать..."></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition shadow-lg shadow-indigo-600/20 w-full">
+              Отправить
+            </button>
+          </form>
+        </div>
+
+      </div>
     </div>
 
   </main>
 
-  <!-- ================================================= -->
-  <!-- ПОДВАЛ / FOOTER -->
-  <!-- ================================================= -->
-  <footer class="border-t border-neutral-800/80 py-6 text-center text-xs text-neutral-500">
-    <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p>© 2026 Nova E-Motion. Все права защищены.</p>
-      <div class="flex gap-4">
-        <a href="https://t.me/Nova_Emotion" class="hover:text-indigo-400 transition">Telegram</a>
-        <a href="mailto:info@novaemotion.ru" class="hover:text-indigo-400 transition">Email</a>
-      </div>
+  <!-- ПОДВАЛ -->
+  <footer class="border-t border-neutral-800/80 py-8 mt-10">
+    <div class="max-w-5xl mx-auto px-6 flex items-center justify-center">
+      <p class="text-sm text-neutral-600">© 2026 Nova E-Motion. Все права защищены.</p>
     </div>
   </footer>
 
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('form-success');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      
+      submitBtn.innerText = 'Отправка...';
+      submitBtn.disabled = true;
+
+      fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: json
+      })
+      .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+              form.reset();
+              successMsg.classList.remove('hidden');
+              successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+              alert(json.message);
+          }
+      })
+      .catch(error => {
+          alert('Произошла ошибка при отправке. Попробуйте позже.');
+      })
+      .finally(() => {
+          submitBtn.innerText = 'Отправить';
+          submitBtn.disabled = false;
+      });
+    });
+  </script>
 </body>
 </html>
