@@ -11,12 +11,32 @@
   <style>
     body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
     .font-heading { font-family: 'Space Grotesk', sans-serif; }
+
+    /* Анимация появления (Scroll Reveal) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 3D-наклон карточек (Tilt) */
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.1s ease-out;
+    }
+    .tilt-content {
+      transform: translateZ(20px); /* Выдвигаем контент вперед */
+    }
   </style>
 </head>
-<body class="bg-neutral-950 text-neutral-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+<body class="bg-neutral-950 text-neutral-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white overflow-x-hidden">
 
   <!-- ШАПКА -->
-  <header class="w-full border-b border-neutral-800/80 bg-neutral-900/40 backdrop-blur-md sticky top-0 z-50">
+  <header class="w-full border-b border-neutral-800/80 bg-neutral-900/40 backdrop-blur-md sticky top-0 z-50 reveal">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/" class="flex items-center gap-4">
         <img src="logo.png" alt="Logo" class="h-10 w-auto object-contain">
@@ -31,7 +51,7 @@
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
     <!-- HERO -->
-    <div class="text-center md:text-left mb-20 pt-8">
+    <div class="text-center md:text-left mb-20 pt-8 reveal">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-medium mb-6">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Открыты к проектам и сотрудничеству
       </div>
@@ -43,8 +63,8 @@
       </p>
     </div>
 
-    <!-- БЛОК НАШИ КОМПЕТЕНЦИИ (2 КОЛОНКИ) -->
-    <div class="mb-24">
+    <!-- БЛОК НАШИ КОМПЕТЕНЦИИ -->
+    <div class="mb-24 reveal">
       <div class="flex items-center justify-between mb-8">
         <h2 class="font-heading text-3xl font-bold text-white">Наши компетенции</h2>
       </div>
@@ -52,15 +72,15 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- 1. Компетенция: Видео -->
-        <div class="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-indigo-500/50 transition-all duration-300 flex flex-col">
+        <div class="tilt-card group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-indigo-500/50 transition-colors duration-300 flex flex-col">
           <div class="aspect-video bg-neutral-800 flex items-center justify-center relative overflow-hidden">
             <img src="video.jpg" alt="Видеомонтаж" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-500 z-0">
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent z-10"></div>
-            <div class="z-20 w-16 h-16 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 backdrop-blur-sm">
+            <div class="z-20 w-16 h-16 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 backdrop-blur-sm tilt-content">
                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
             </div>
           </div>
-          <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900">
+          <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900 tilt-content">
             <div>
               <h3 class="font-heading text-lg font-bold text-white mb-2">Видеомонтаж</h3>
               <p class="text-sm text-neutral-300 mb-4">Работа с исходниками любого качества. Динамичная склейка, цветокоррекция, звук и графика для Reels и роликов.</p>
@@ -70,15 +90,15 @@
         </div>
 
         <!-- 2. Компетенция: Сайты -->
-        <div class="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-emerald-500/50 transition-all duration-300 flex flex-col">
+        <div class="tilt-card group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-emerald-500/50 transition-colors duration-300 flex flex-col">
           <div class="aspect-video bg-neutral-800 flex items-center justify-center relative overflow-hidden">
              <img src="web.jpg" alt="Веб-разработка" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-500 z-0">
              <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent z-10"></div>
-             <div class="z-20 w-16 h-16 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 backdrop-blur-sm">
+             <div class="z-20 w-16 h-16 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 backdrop-blur-sm tilt-content">
                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
              </div>
           </div>
-          <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900">
+          <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900 tilt-content">
             <div>
               <h3 class="font-heading text-lg font-bold text-white mb-2">Веб-разработка</h3>
               <p class="text-sm text-neutral-300 mb-4">Создание лендингов, сайтов-визиток и портфолио под ключ. Быстрый запуск, современный дизайн и адаптивность под любые устройства.</p>
@@ -91,7 +111,7 @@
     </div>
 
     <!-- БЛОК МАНИФЕСТ -->
-    <div class="mb-0"> 
+    <div class="mb-0 reveal"> 
       <div class="text-center md:text-left mb-10">
         <h2 class="font-heading text-3xl font-bold text-white mb-4">Манифест Nova E-Motion</h2>
         <p class="text-neutral-300 text-lg">
@@ -119,7 +139,7 @@
           </p>
         </div>
 
-        <!-- Принцип 3 (Заменен под веб/видео) -->
+        <!-- Принцип 3 -->
         <div class="relative pl-6 border-l-2 border-cyan-500/30 h-full">
           <div class="font-heading text-4xl font-bold text-cyan-500/40 mb-2">03</div>
           <h3 class="font-heading text-xl font-bold text-white mb-3">Синергия контента</h3>
@@ -139,7 +159,7 @@
     </div>
 
     <!-- БЛОК СВЯЗИ -->
-    <div id="contact" class="pt-16 pb-6 scroll-mt-24">
+    <div id="contact" class="pt-16 pb-6 scroll-mt-24 reveal">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         
         <!-- ЛЕВАЯ КОЛОНКА -->
@@ -199,7 +219,6 @@
           </div>
 
           <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <!-- ВСТАВЛЕН ВАШ КЛЮЧ -->
             <input type="hidden" name="access_key" value="08306faa-397d-40d4-9641-1af20c998f79">
             
             <div class="mb-4">
@@ -217,7 +236,6 @@
               <textarea name="message" required rows="3" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors resize-none" placeholder="Кратко о том, что нужно сделать..."></textarea>
             </div>
 
-            <!-- ЧЕКБОКС СОГЛАСИЯ -->
             <div class="mb-6">
               <label class="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" name="consent" required class="mt-1 w-4 h-4 text-indigo-600 bg-neutral-950 border-neutral-800 rounded focus:ring-indigo-500 focus:ring-2">
@@ -239,7 +257,7 @@
   </main>
 
   <!-- ПОДВАЛ -->
-  <footer class="border-t border-neutral-800/80 py-8 mt-10">
+  <footer class="border-t border-neutral-800/80 py-8 mt-10 reveal">
     <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-sm text-neutral-600">© 2026 Digital-агентство Nova E-Motion. Все права защищены.</p>
       <div class="flex gap-6">
@@ -248,7 +266,53 @@
     </div>
   </footer>
 
+  <!-- СКРИПТЫ АНИМАЦИИ -->
   <script>
+    // 1. Анимация появления при скролле (Scroll Reveal)
+    const reveals = document.querySelectorAll('.reveal');
+    
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      const elementVisible = 100;
+      
+      reveals.forEach((reveal) => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+          reveal.classList.add('active');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Запуск при загрузке
+
+    // 2. 3D-наклон карточек (Tilt)
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    
+    // Отключаем на мобильных устройствах (где нет мышки)
+    if (window.matchMedia("(pointer: fine)").matches) {
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = ((y - centerY) / centerY) * -5; // Наклон по X (макс 5 градусов)
+          const rotateY = ((x - centerX) / centerX) * 5;  // Наклон по Y (макс 5 градусов)
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
+        });
+      });
+    }
+
+    // 3. Логика отправки формы
     const form = document.getElementById('contact-form');
     const successMsg = document.getElementById('form-success');
     const submitBtn = document.getElementById('submit-btn');
