@@ -39,17 +39,17 @@
         Креативные решения,<br>медиа и <span class="text-indigo-400">технологии</span>
       </h1>
       <p class="text-neutral-400 text-base md:text-lg max-w-2xl leading-relaxed">
-        Комплексные решения для вашего бизнеса: от профессионального видеомонтажа до создания сайтов и IT-поддержки. Реализуем задачи от идеи до готового результата.
+        Комплексные решения для вашего бизнеса: от профессионального видеомонтажа до создания сайтов. Реализуем задачи от идеи до готового результата.
       </p>
     </div>
 
-    <!-- БЛОК НАШИ КОМПЕТЕНЦИИ -->
+    <!-- БЛОК НАШИ КОМПЕТЕНЦИИ (2 КОЛОНКИ) -->
     <div class="mb-24">
       <div class="flex items-center justify-between mb-8">
         <h2 class="font-heading text-3xl font-bold text-white">Наши компетенции</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- 1. Компетенция: Видео -->
         <div class="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-indigo-500/50 transition-all duration-300 flex flex-col">
@@ -87,24 +87,6 @@
           </div>
         </div>
 
-        <!-- 3. Компетенция: IT -->
-        <div class="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 flex flex-col">
-          <div class="aspect-video bg-neutral-800 flex items-center justify-center relative overflow-hidden">
-             <img src="it.jpg" alt="IT и инфраструктура" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-500 z-0">
-             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent z-10"></div>
-             <div class="z-20 w-16 h-16 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 backdrop-blur-sm">
-               <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
-             </div>
-          </div>
-          <div class="p-5 flex-grow flex flex-col justify-between z-20 relative bg-neutral-900">
-            <div>
-              <h3 class="font-heading text-lg font-bold text-white mb-2">IT и Инфраструктура</h3>
-              <p class="text-sm text-neutral-300 mb-4">Настройка рабочих мест, серверов и сетей. Берем на себя техническую поддержку.</p>
-            </div>
-            <a href="#contact" class="text-xs text-cyan-400 font-semibold uppercase tracking-wider hover:text-cyan-300 transition-colors">Обсудить задачу &rarr;</a>
-          </div>
-        </div>
-
       </div>
     </div>
 
@@ -137,18 +119,18 @@
           </p>
         </div>
 
-        <!-- Принцип 3 -->
+        <!-- Принцип 3 (Заменен под веб/видео) -->
         <div class="relative pl-6 border-l-2 border-cyan-500/30 h-full">
           <div class="font-heading text-4xl font-bold text-cyan-500/40 mb-2">03</div>
-          <h3 class="font-heading text-xl font-bold text-white mb-3">Порядок и надежность</h3>
+          <h3 class="font-heading text-xl font-bold text-white mb-3">Синергия контента</h3>
           <p class="text-sm text-neutral-300 leading-relaxed">
-            Мы не оставляем после себя хаос. Настраиваем IT-инфраструктуру так, чтобы она работала как часы: без сбоев, зависаний и потери данных.
+            Видео и сайт работают в связке. Ролик привлекает внимание, а сайт конвертирует его в клиента. Мы создаем единую экосистему для вашего бизнеса.
           </p>
         </div>
 
       </div>
       
-      <!-- ЦИТАТА (Чуть уже и с большим интервалом) -->
+      <!-- ЦИТАТА -->
       <div class="mt-12 py-10 border-t border-b border-neutral-800/80">
         <p class="font-heading text-lg md:text-xl text-neutral-200 italic max-w-4xl leading-loose">
           «Nova E-Motion — объединяем технологии и творчество, чтобы ваш бизнес выглядел безупречно и приносил прибыль.»
@@ -166,7 +148,7 @@
           <div>
             <h2 class="font-heading text-3xl font-bold text-white mb-4">Обсудить задачу</h2>
             <p class="text-neutral-300 mb-8 leading-relaxed">
-              Нужно смонтировать видео, сделать сайт или настроить IT-инфраструктуру? Оставьте заявку, и мы предметно обсудим ваш проект.
+              Нужно смонтировать видео или сделать сайт? Оставьте заявку, и мы предметно обсудим ваш проект.
             </p>
           </div>
           
@@ -291,7 +273,7 @@
       .then(async (response) => {
           let json = await response.json();
           if (response.status == 200) {
-              form.style.display = 'none'; // Скрываем форму
+              form.style.display = 'none';
               successMsg.classList.remove('hidden');
               successMsg.classList.add('block', 'text-center', 'py-8'); 
           } else {
